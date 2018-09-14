@@ -18,6 +18,7 @@ class CreateComputersTable extends Migration
             $table->string('number');
             $table->boolean('status')->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Computer;
+use App\Models\Order;
 use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -27,6 +28,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::model('computer', Computer::class);
         Route::model('service', Service::class);
+        Route::model('order', Order::class);
         parent::boot();
     }
 
