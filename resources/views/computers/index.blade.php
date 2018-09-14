@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="card-body">
-                        <div class="table-responsive">
+                        <div class="table-responsive col-md-12">
                             <table id="data" class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
@@ -52,6 +52,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{ $computers->appends(['sort' => 'votes'])->links() }}
                         </div>
                     </div>
                 </div>

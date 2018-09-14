@@ -18,7 +18,7 @@ class ComputerController extends Controller
      */
     public function index()
     {
-        $computers = Computer::all();
+        $computers = Computer::paginate(10);
         return view('computers.index', compact('computers'));
     }
 
