@@ -32,6 +32,6 @@ $factory->define(App\Models\Computer::class, function (Faker $faker) {
 $factory->define(App\Models\Service::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
-        'price' => $faker->numberBetween(1, 500000)
+        'price' => $faker->numberBetween(1, 5000)
     ];
 });
