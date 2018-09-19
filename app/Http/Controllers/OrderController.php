@@ -60,10 +60,12 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        $admins = User::admins();
-        $computers = Computer::all();
         $services = $order->services()->get();
-        return view('orders.view', compact('order', 'services'));
+        $price = 0;
+        foreach ($services as $service) {
+            $price += $service->price * $service->pivot->count;
+        }
+        return view('orders.show', compact('order', 'services', 'price'));
     }
 
     /**
