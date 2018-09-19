@@ -28,4 +28,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
+
+    public function scopeAdmins($query)
+    {
+        return $query->where('is_admin', 1);
+    }
 }

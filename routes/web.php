@@ -22,7 +22,8 @@ Route::group(['middleware' => 'auth'], function ()
     Route::group(['middleware' => 'admin'], function (){
         Route::resources([
             'computers' => 'ComputerController',
-            'services' => 'ServiceController'
+            'services' => 'ServiceController',
+            'orders' => 'OrderController'
         ]);
     });
 });
