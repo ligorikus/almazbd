@@ -19,10 +19,14 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function ()
 {
+    Route::resources(array(
+        'computers' => 'ComputerControll \'computers\' => \'ComputerController\',
+            \'services\' => \'ServiceController\',ppppppppppppppppppppppppppppp[er',
+        'services' => 'ServiceController',
+    ));
     Route::group(['middleware' => 'admin'], function (){
         Route::resources([
-            'computers' => 'ComputerController',
-            'services' => 'ServiceController',
+            'users' => 'UserController',
             'orders' => 'OrderController'
         ]);
     });

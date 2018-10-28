@@ -8,11 +8,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-4">
-                                <h3>{{ __('Orders') }}</h3>
-                            </div>
-                            <div class="col-md-6"></div>
-                            <div class="col-md-2">
-                                <a href="{{route('orders.create')}}" class="btn btn-primary">Добавить заказ</a>
+                                <h3>{{ __('Users') }}</h3>
                             </div>
                         </div>
                     </div>
@@ -23,28 +19,22 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Admin</th>
-                                    <th>Computer</th>
+                                    <th>User</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($orders as $order)
+                                @foreach($users as $user)
                                     <tr>
-                                        <td>{{$order->id}}</td>
-                                        <td>
-                                            <a href="{{route('users.show', [$order->admin->id])}}">
-                                                {{$order->admin->email}}
-                                            </a>
-                                        </td>
-                                        <td>{{$order->computer->number}}</td>
+                                        <td>{{$user->id}}</td>
+                                        <td>{{$user->email}}</td>
                                         <td scope="row">
                                             <div class="col-md-12">
                                                 <div class="row">
-                                                    <a href="{{route('orders.show', [$order])}}" class="btn btn-primary">
+                                                    <a href="{{route('users.show', [$user])}}" class="btn btn-primary">
                                                         Показать
                                                     </a>
-                                                    <form action="{{route('orders.destroy', [$order])}}" method="POST">
+                                                    <form action="{{route('users.destroy', [$user])}}" method="POST">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
                                                         <button type="submit" class="btn btn-danger">
@@ -58,7 +48,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                            {{ $orders->appends(['sort' => 'votes'])->links() }}
+                            {{ $users->appends(['sort' => 'votes'])->links() }}
                         </div>
                     </div>
                 </div>
